@@ -1,51 +1,43 @@
 #!/usr/bin/env bash
 
-echo "███████╗ ██████╗ ██████╗ ██╗███╗   ██╗     ██████╗ ███████╗    ██████╗ ██████╗  ██████╗ "
-echo "╚══███╔╝██╔═══██╗██╔══██╗██║████╗  ██║    ██╔═══██╗██╔════╝    ██╔══██╗██╔══██╗██╔═══██╗"
-echo "  ███╔╝ ██║   ██║██████╔╝██║██╔██╗ ██║    ██║   ██║███████╗    ██████╔╝██████╔╝██║   ██║"
-echo " ███╔╝  ██║   ██║██╔══██╗██║██║╚██╗██║    ██║   ██║╚════██║    ██╔═══╝ ██╔══██╗██║   ██║"
-echo "███████╗╚██████╔╝██║  ██║██║██║ ╚████║    ╚██████╔╝███████║    ██║     ██║  ██║╚██████╔╝"
-echo "╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝     ╚═════╝ ╚══════╝    ╚═╝     ╚═╝  ╚═╝ ╚═════╝ "
-echo "|ZORIN-OS-PRO| |Script v1.0.0| |ʙʏ ᴘᴇᴀᴋʏᴄᴏᴍᴍᴀɴᴅ|"
+# Bold, bright colors for a striking header
+echo -e "\e[1m\e[91m███████╗ ██████╗ ██████╗ ██╗███╗  ██╗      ██████╗ ███████╗      ██████╗ ██████╗ ██████╗ \e[0m"
+echo -e "\e[1m\e[92m╚══███╔╝██╔═══██╗██╔══██╗██║████╗ ██║     ██╔═══██╗██╔════╝     ██╔══██╗██╔══██╗██╔═══██╗\e[0m"
+echo -e "\e[1m\e[93m ███╔╝ ██║  ██║██████╔╝██║██╔██╗ ██║     ██║  ██║███████╗     ██████╔╝██████╔╝██║  ██║\e[0m"
+echo -e "\e[1m\e[92m ███╔╝ ██║  ██║██╔══██╗██║██║╚██╗██║     ██║  ██║╚════██║     ██╔═══╝ ██╔══██╗██║  ██║\e[0m"
+echo -e "\e[1m\e[91m███████╗╚██████╔╝██║ ██║██║██║ ╚████║    ╚██████╔╝███████║      ██║   ██║ ██║╚██████╔╝\e[0m"
+echo -e "\e[1m\e[94m╚══════╝ ╚═════╝ ╚═╝ ╚═╝╚═╝╚═╝  ╚═══╝      ╚═════╝ ╚══════╝      ╚═╝   ╚═╝ ╚═╝ ╚═════╝ \e[0m"
+echo -e "\e[96m|ZORIN-OS-PRO| |Script v1.0.0| |ʙʏ tnkrueckergreen|\e[0m"
+
 sleep 1
 
-#delete zorin.list defaut
+# Clear visual cues for actions
+echo -e "\e[1mRemoving default server list...\e[0m"
 sudo rm -r /etc/apt/sources.list.d/zorin.list
 
-echo "Changing the defaut server list..."
-
-sleep 1
-
-#copy zorin.list mod
+echo -e "\e[1mCopying modified server list...\e[0m"
 sudo cp ./zorin.list /etc/apt/sources.list.d
 
-#introduces premium user agent
+echo -e "\e[1mIntroducing premium user agent...\e[0m"
 sudo cp ./99zorin-os-premium-user-agent /etc/apt/apt.conf.d/
 
-echo "adding premium subscription..."
-
+echo -e "\e[1mPreparing to install dependencies...\e[0m"
 sleep 1
-
-#enter the folder
-cd /etc/apt/apt.conf.d/
-
-echo "preparing to install dependencies..."
-sleep 1
-#install ca-certificates
 sudo apt install ca-certificates -y
 
-#update packages
+echo -e "\e[1mUpdating packages...\e[0m"
 sudo apt update -y
 
-#install pro  layouts
+echo -e "\e[1mInstalling pro layouts...\e[0m"
 sudo apt install zorin-appearance-layouts-shell-premium -y
 
-#install pro  wallpapers
+echo -e "\e[1mInstalling pro wallpapers...\e[0m"
 sudo apt install zorin-os-pro-wallpapers -y
 
-echo "all done!! "
-echo "Your Zorin Os will restart in 5 seconds.. "
+echo -e "\e[1mAll done!\e[0m"
+echo -e "Your Zorin OS will restart in 5 seconds..."
 sleep 5
 
-#reboot 
+# Clear reboot message
+echo -e "\e[1mRebooting...\e[0m"
 sudo reboot
