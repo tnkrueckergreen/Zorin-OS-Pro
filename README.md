@@ -1,5 +1,5 @@
 # Zorin-OS-Pro
-This script turns your Zorin OS CORE into Zorin OS PRO
+This script turns Zorin OS Core 17 into Zorin OS 17 Pro
 
 You will have access to all Zorin OS Pro wallpapers and layouts
 <p align="center">
